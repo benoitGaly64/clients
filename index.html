@@ -46,9 +46,14 @@
 										<button class="ui button yellow create_btn" type="button" id="btnCreateUser">Create</button>
 									</div>
 								</div>
+								
 							</div>
+							
 						</div>
-						
+						<div class="ui icon input fluid">
+								<input type="text" placeholder="Search...">
+  								<i class="circular search link icon"></i>
+  							</div>
 						<div id="second" class="ui bottom attached tab" data-tab="second">
 							Second
 						</div>
@@ -63,7 +68,7 @@
 			</div>
 						
 		</div>
-		<div class="ui modal popupCreateUser">
+		<div class="ui large modal popupCreateUser">
 			<i class="close icon"></i>
 			<div class="header">
 				<div class="ui circular Mini image">
@@ -101,7 +106,7 @@
 						Serveurs
 					</div>
 					<div class="content">
-						<table class="ui celled padded table">
+						<table class="ui celled padded table" id="tableServers">
 							<thead>
 								<tr>
 									<th class="single line">Nom</th>

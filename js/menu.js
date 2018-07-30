@@ -43,9 +43,7 @@ $(function(){
 	$("#btnCreateUser").click(function(){
 		$(".popupCreateUser").modal('show');
 	});
-	$(".popupCreateUser").modal({
-		closable: true
-	});
+
 });
 
 function addSite() {
@@ -69,54 +67,92 @@ function addSite() {
 
 function addServer() {
 	numServer=increment(numServer);
-	var site = document.createElement("div");
-	site.setAttribute('id','server' + numServer);
-		
+	
+	var divServerName = document.createElement("div");
+	divServerName.setAttribute('class','ui transparent mini input');
 	var serverName = document.createElement("input");
 	serverName.setAttribute('type','text');
-	serverName.setAttribute('id','ServerName' + numSite);
+	serverName.setAttribute('id','ServerName' + numServer);
 	serverName.setAttribute('placeholder','Nom');
+	serverName.setAttribute('style','width:80px');
 	
+	var divServerRole = document.createElement("div");
+	divServerRole.setAttribute('class','ui transparent mini input');
 	var serverRole = document.createElement("input");
 	serverRole.setAttribute('type','text');
-	serverRole.setAttribute('id','serverRole' + numSite);
+	serverRole.setAttribute('id','serverRole' + numServer);
 	serverRole.setAttribute('placeholder','Role');
-	
+	serverRole.setAttribute('style','width:50px');
+		
+	var divServerUser = document.createElement("div");
+	divServerUser.setAttribute('class','ui transparent mini input');
 	var serverUser = document.createElement("input");
 	serverUser.setAttribute('type','text');
-	serverUser.setAttribute('id','serverUser' + numSite);
+	serverUser.setAttribute('id','serverUser' + numServer);
 	serverUser.setAttribute('placeholder','Utilisateur');
-	
+	serverUser.setAttribute('style','width:90px');
+		
+	var divServerPassword = document.createElement("div");
+	divServerPassword.setAttribute('class','ui transparent mini input');
 	var serverPassword = document.createElement("input");
 	serverPassword.setAttribute('type','text');
-	serverPassword.setAttribute('id','serverPassword' + numSite);
+	serverPassword.setAttribute('id','serverPassword' + numServer);
 	serverPassword.setAttribute('placeholder','Password');
+	serverPassword.setAttribute('style','width:90px');
 	
+	var divServerDomain = document.createElement("div");
+	divServerDomain.setAttribute('class','ui transparent mini input');
 	var serverDomain = document.createElement("input");
 	serverDomain.setAttribute('type','text');
-	serverDomain.setAttribute('id','serverDomain' + numSite);
+	serverDomain.setAttribute('id','serverDomain' + numServer);
 	serverDomain.setAttribute('placeholder','Dommaine');
+	serverDomain.setAttribute('style','width:70px');
 	
+	var divServerSystem = document.createElement("div");
+	divServerSystem.setAttribute('class','ui transparent mini input');
 	var serverSystem = document.createElement("input");
 	serverSystem.setAttribute('type','text');
-	serverSystem.setAttribute('id','serverSystem' + numSite);
+	serverSystem.setAttribute('id','serverSystem' + numServer);
 	serverSystem.setAttribute('placeholder','Systeme d\'exploitation');
+	serverSystem.setAttribute('style','width:200px');
 	
+	var divServerIP = document.createElement("div");
+	divServerIP.setAttribute('class','ui transparent mini input');
 	var serverIP = document.createElement("input");
 	serverIP.setAttribute('type','text');
-	serverIP.setAttribute('id','serverIP' + numSite);
+	serverIP.setAttribute('id','serverIP' + numServer);
 	serverIP.setAttribute('placeholder','IP');
+	serverIP.setAttribute('style','width:100px');
+		
+	divServerName.appendChild(serverName);
+	divServerRole.appendChild(serverRole);
+	divServerUser.appendChild(serverUser);
+	divServerPassword.appendChild(serverPassword);
+	divServerDomain.appendChild(serverDomain);
+	divServerSystem.appendChild(serverSystem);
+	divServerIP.appendChild(serverIP);
 	
-	site.appendChild(serverName);
-	site.appendChild(serverRole);
-	site.appendChild(serverUser);
-	site.appendChild(serverPassword);
-	site.appendChild(serverDomain);
-	site.appendChild(serverSystem);
-	site.appendChild(serverIP);
+	var table = document.getElementById("tableServers");
 	
-	var referenceNode = document.querySelector('#btnCreateServer');
-    referenceNode.parentNode.insertBefore(site,referenceNode);
+	var row = table.insertRow(numServer);
+	
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+	var cell3 = row.insertCell(2);
+	var cell4 = row.insertCell(3);
+	var cell5 = row.insertCell(4);
+	var cell6 = row.insertCell(5);
+	var cell7 = row.insertCell(6);
+	var cell8 = row.insertCell(7);
+	
+	cell1.appendChild(divServerName);
+	cell2.appendChild(divServerRole);
+	cell3.appendChild(divServerUser);
+	cell4.appendChild(divServerPassword);
+	cell5.appendChild(divServerDomain);
+	cell6.appendChild(divServerSystem);
+	cell7.appendChild(divServerIP);
+
 }
 
 function addRouter() {
