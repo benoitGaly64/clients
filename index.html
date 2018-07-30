@@ -4,96 +4,156 @@
 	<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
 
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-	
+	<script src="semantic/semantic.min.js"></script>
 	<script src="js/menu.js"></script>
+
+	
   </head>
   <body>
-  
+	
 	<div class="ui container" style="width:70%;">
-	<div class="ui basic segment">
 		<div class="ui basic segment">
-			<div class="ui one column stackable center aligned page grid">
-				<div class="column twelve wide">
-					<p class="ui header">MDSERVICES Gestion Clients</p>
+			<!-- Titre -->
+			<div class="ui basic segment">
+				<div class="ui one column stackable center aligned page grid">
+					<div class="column twelve wide">
+						<p class="ui header">MDSERVICES Gestion Clients</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<!-- <div class="ui segment"> -->
-		<div class="ui basic right floated segment" style="width:30%">
-			<div class="ui right aligned category search">
-				<div class="ui icon input huge">
-					<input class="prompt" type="text" placeholder="Client">
-					<i class="search icon"></i>
-				</div>
-				<div class="results"></div>
+			<!-- menu -->
+			<div class="ui container">
+				<main id="main-view">
+					<div id="main-tabs" class="ui secondary pointing menu">
+						<a id="first"  class="item" data-tab="Home">
+							Home
+						</a>	
+						<a id="create_tab" class="item"  onclick="add_menu()">
+							<i class="plus icon"></i>
+						</a>
+					</div>
+					<div id="main-content">
+						<div id="homeContent" class="ui bottom attached tab active" data-tab="Home">
+							<div class="ui cards">
+								<div class="card">
+									<div class="content">
+										<div class="header">
+											Creer un nouveau client
+										</div>
+									    <div class="description" onclick="showUserModal">
+											Création d'un nouveau client dans le système
+										</div>
+										<button class="ui button yellow create_btn" type="button" id="btnCreateUser">Create</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div id="second" class="ui bottom attached tab" data-tab="second">
+							Second
+						</div>
+						<div id="third" class="ui bottom attached tab" data-tab="third">
+							Third
+						</div>
+						<div id="datatest" class="ui bottom attached tab" data-tab="datatest">
+							datatest
+						</div>
+					</div>
+				</main>
 			</div>
+						
 		</div>
+		<div class="ui modal popupCreateUser">
+			<i class="close icon"></i>
+			<div class="header">
+				<div class="ui circular Mini image">
+					<img src="https://semantic-ui.com/images/avatar2/large/rachel.png">
+				</div>
+				Creation d'un client
+			</div>
+			<div class="description">
+				<div class="ui styled fluid accordion">
+					<div class="title active">
+						<i class="dropdown icon"></i>
+						Informations Générales
+					</div>
+					<div class="content active">
+						<div class="ui mini input">
+							<input type="text" placeholder="Nom"> 
+						</div>
+						<div class="ui mini input">
+							<input type="text" placeholder="Website"> 
+						</div>
+						<div class="ui mini input">
+							<input type="text" placeholder="Téléphonne"> 
+						</div>
+					</div>
+					<div class="title">
+						<i class="dropdown icon"></i>
+						Sites
+					</div>
+					<div class="content">
 
-		
-		
-<div class="ui secondary menu">
-  <a class="active item">
-    Home
-  </a>
-  <a class="item">
-    Messages
-  </a>
-  <a class="item">
-    Friends
-  </a>
-  <div class="right menu">
-    <div class="item">
-      <div class="ui icon input">
-        <input type="text" placeholder="Search...">
-        <i class="search link icon"></i>
-      </div>
-    </div>
-    <a class="ui item">
-      Logout
-    </a>
-  </div>
-</div>
-			<div class="ui four item menu">
-				<a class="active item">Réseau</a>
-				<a class="item">Serveurs</a>
-				<a class="item">Office</a>
-				<a class="item">Firewall</a>
+						<button class="ui primary basic button" onclick="addSite()" id="btnCreateSite">Ajouter un site</button>
+					</div>
+					<div class="title">
+						<i class="dropdown icon"></i>
+						Serveurs
+					</div>
+					<div class="content">
+						<table class="ui celled padded table">
+							<thead>
+								<tr>
+									<th class="single line">Nom</th>
+									<th>Role</th>
+									<th>Utilisateur</th>
+									<th>Password</th>
+									<th>Domaine</th>
+									<th>Système d'exploitation</th>
+									<th>IP</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+						<button class="ui primary basic button" onclick="addServer()" id="btnCreateServer">Ajouter un Serveur</button>
+					</div>
+					<div class="title">
+						<i class="dropdown icon"></i>
+						Routeurs
+					</div>
+					<div class="content">
+							<button class="ui primary basic button" onclick="addRouter()" id="btnCreateRouter">Ajouter un Serveur</button>
+								- Modele
+								- date achat
+								- durée garantie
+								- IP publique
+								- User
+								- Password
+					</div>
+					<div class="title">
+						<i class="dropdown icon"></i>
+						Réseau
+					</div>
+					<div class="content">
+							Ajouter VLan
+								- id
+								- description
+							Ajouter plage IP
+								- plage
+								- masque
+								- description
+					</div>
+				</div>
+				<div class="actions">
+					<div class="ui black deny button">
+						Annuler
+					</div>
+					<div class="ui positive right labeled icon button">
+						Créer
+						<i class="checkmark icon"></i>
+					</div>
+				</div>
 			</div>
-		<div class="ui container">
-			<table class="ui celled table">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Status</th>
-						<th>Notes</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>No Name Specified</td>
-						<td>Unknown</td>
-						<td class="negative">None</td>
-					</tr>
-					<tr class="positive">
-						<td>Jimmy</td>
-						<td><i class="icon checkmark"></i> Approved</td>
-						<td>None</td>
-					</tr>
-					<tr>
-						<td>Jamie</td>
-						<td>Unknown</td>
-						<td class="positive"><i class="icon close"></i> Requires call</td>
-					</tr>
-					<tr class="negative">
-						<td>Jill</td>
-						<td>Unknown</td>
-						<td>None</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	</div>
-<script src="semantic/semantic.min.js"></script>
   </body>
 </html>
