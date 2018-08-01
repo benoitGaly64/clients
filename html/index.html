@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>MDSERVICES Gestion Clients</title>
+	<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="semantic/semantic.min.js"></script>
+	<script src="js/menu.js"></script>
+
+	
+  </head>
+  <body>
+	
+	<div class="ui container" style="width:70%;">
+		<div class="ui basic segment">
+			<!-- Titre -->
+			<div class="ui basic segment">
+				<div class="ui one column stackable center aligned page grid">
+					<div class="column twelve wide">
+						<p class="ui header">MDSERVICES Gestion Clients</p>
+					</div>
+				</div>
+			</div>
+			<!-- menu -->
+			<div class="ui container">
+				<main id="main-view">
+					<div id="main-tabs" class="ui secondary pointing menu">
+						<a id="first"  class="item" data-tab="Home">
+							Home
+						</a>	
+						<a id="create_tab" class="item"  onclick="add_menu()">
+							<i class="plus icon"></i>
+						</a>
+					</div>
+					<div id="main-content">
+						<div id="homeContent" class="ui bottom attached tab active" data-tab="Home">
+							<div class="ui cards">
+								<div class="card">
+									<div class="content">
+										<div class="header">
+											Creer un nouveau client
+										</div>
+									    <div class="description" onclick="showUserModal">
+											Création d'un nouveau client dans le système
+										</div>
+										<button class="ui button yellow create_btn" type="button" id="btnCreateUser">Create</button>
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+				</main>
+			</div>
+						
+		</div>
+		</div>
+  </body>
+</html>

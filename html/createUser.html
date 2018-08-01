@@ -1,0 +1,77 @@
+<div class="ui large modal popupCreateUser">
+	<i class="close icon"></i>
+	<div class="header">
+		<div class="ui circular Mini image">
+			<img src="https://semantic-ui.com/images/avatar2/large/rachel.png">
+		</div>
+		Creation d'un client
+	</div>
+	<div class="description">
+		<div class="ui styled fluid accordion">
+			<div class="title active">
+				<i class="dropdown icon"></i> Informations Générales
+			</div>
+			<div class="content active">
+				<div class="ui mini input">
+					<input type="text" placeholder="Nom">
+				</div>
+				<div class="ui mini input">
+					<input type="text" placeholder="Website">
+				</div>
+				<div class="ui mini input">
+					<input type="text" placeholder="Téléphonne">
+				</div>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i> Sites
+			</div>
+			<div class="content">
+
+				<button class="ui primary basic button" onclick="addSite()"
+					id="btnCreateSite">Ajouter un site</button>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i> Serveurs
+			</div>
+			<div class="content">
+				<table class="ui celled padded table" id="tableServers">
+					<thead>
+						<tr>
+							<th class="single line">Nom</th>
+							<th>Role</th>
+							<th>Utilisateur</th>
+							<th>Password</th>
+							<th>Domaine</th>
+							<th>Système d'exploitation</th>
+							<th>IP</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+				<button class="ui primary basic button" onclick="addServer()"
+					id="btnCreateServer">Ajouter un Serveur</button>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i> Routeurs
+			</div>
+			<div class="content">
+				<button class="ui primary basic button" onclick="addRouter()"
+					id="btnCreateRouter">Ajouter un Serveur</button>
+				- Modele - date achat - durée garantie - IP publique - User -
+				Password
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i> Réseau
+			</div>
+			<div class="content">Ajouter VLan - id - description Ajouter
+				plage IP - plage - masque - description</div>
+		</div>
+		<div class="actions">
+			<div class="ui black deny button">Annuler</div>
+			<div class="ui positive right labeled icon button">
+				Créer <i class="checkmark icon"></i>
+			</div>
+		</div>
+	</div>
+</div>
