@@ -191,12 +191,18 @@ function addRouter() {
 	routerPassword.setAttribute('id','routerDateAchat' + numRouter);
 	routerPassword.setAttribute('placeholder','Password');
 	
+	var divRouterSite = document.createElement("div");
+	divRouterSite.setAttribute('class','field');
+	var selectRouterSite = document.createElement("select");
+	listSite()
+	
 	divRouterIP.appendChild(routerIP);
 	divRouterDateAchat.appendChild(routerDateAchat);
 	divRouterModele.appendChild(routerModele);
 	divRouterDureeGuarantie.appendChild(routerDureeGuarantie);
 	divRouterUser.appendChild(routerUser);
 	divRouterPassword.appendChild(routerPassword);
+	divRouterSite.appendChild(selectRouterSite);
 	
 var table = document.getElementById("tableRouters");
 	
@@ -208,18 +214,32 @@ var table = document.getElementById("tableRouters");
 	var cell4 = row.insertCell(3);
 	var cell5 = row.insertCell(4);
 	var cell6 = row.insertCell(5);
+	var cell7 = row.insertCell(6);
 
 	
-	
-	cell4.appendChild(divRouterIP);
-	cell2.appendChild(divRouterDateAchat);
 	cell1.appendChild(divRouterModele);
+	cell2.appendChild(divRouterDateAchat);
 	cell3.appendChild(divRouterDureeGuarantie);
+	cell4.appendChild(divRouterIP);
 	cell5.appendChild(divRouterUser);
 	cell6.appendChild(divRouterPassword);
+	cell7.appendChild(divRouterSite);
 }
 
 function increment(n){
   n=n+1;
   return n;
+}
+function listSite(){
+
+	var arr = [];
+	$("#tableSites tr").not(":first").each(function(){
+	    arr.push($(this).find("td:first").find("input").val());
+	});
+	for (i=0;i<arr.length;i++)
+	{
+	document.write(arr[i] + "<br >");
+	}
+	return arr;
+	
 }
